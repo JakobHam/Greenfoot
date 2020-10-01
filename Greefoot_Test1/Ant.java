@@ -7,22 +7,27 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (#1)
  */
 public class Ant extends Actor
-{
+{   
+    int speed = 1;
+    int tspeed = 5;
     public void act() 
     {   
+        move (speed);
         if (Greenfoot.isKeyDown("w")){
-            move(5);
+            speed = speed + 1;
         }
         if (Greenfoot.isKeyDown("s")){
-            move(-5);
+            speed = speed - 1;
             }    
+        if (speed < 0) {
+        speed = speed + 1;
+    }
+            
         if (Greenfoot.isKeyDown("d")){
-            turn(5);
-            move(1);
+            turn(tspeed);
         } 
         if (Greenfoot.isKeyDown("a")){
-            turn(-5);
-            move(1);
+            turn(- tspeed);
         }
     }
 }
