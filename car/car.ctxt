@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=car
-comment0.text=\n\ @author\ Jakob\ \n\ @version\ 1\n
+comment0.text=\r\n\ @author\ Jakob\ \r\n\ @version\ 1\r\n
 comment1.params=
 comment1.target=void\ act()
 numComments=2

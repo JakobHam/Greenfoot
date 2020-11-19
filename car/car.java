@@ -26,7 +26,7 @@ public class car extends Actor
             move(speed);
         }
         if (Greenfoot.isKeyDown("s")){
-            move(-2);
+            move(-speed);
         }
         if (Greenfoot.isKeyDown("a")){
             turn(-2);
