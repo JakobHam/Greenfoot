@@ -8,21 +8,36 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Warplane extends Actor
 {
+    public Warplane()
+    {
+        setRotation(-90);
+    }
 
     public void act() 
     {
-        setRotation(-90);
-        int x = getX();
-        int y = getY();
+
         if(Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("d")){}
         else{
             if(Greenfoot.isKeyDown("a")){
-                setLocation(x - 4, y);
+                setLocation(getX() - 6, getY());
             }
             if(Greenfoot.isKeyDown("d")){
-                setLocation(x + 4, y);
+                setLocation(getX() + 6, getY());
             }
         }
+        fireProjectile();
+    }  
+    int v = 0;
+    public void fireProjectile()
+    {
         
-    }    
+        if (Greenfoot.isKeyDown("space")){
+            v++;
+            if (v == 10)
+            {
+                getWorld().addObject(new Projectile(), getX(), getY() - 60);
+                v = 0;
+            }
+        }
+    }
 }

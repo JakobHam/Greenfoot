@@ -16,18 +16,29 @@ public class MyWorld extends World
     public MyWorld()
     {    
         super(600, 900, 1);
-
-        addObject(new Warplane(), 200, 800);
-
+        prepare();
     }
-    int i = 1;
-    public void act(){
-        if(i < 2){
-            
-            addObject(new Rocks(),Greenfoot.getRandomNumber(1000),0);
-            
-        }
-
+    int v = 0;
+    public void act()
+    {
+        v++;
+        if(v>60){
+        addEnemy();
+        v = 0;
+    }
+    }
+    public void addEnemy()
+    {
+    addObject(new Enemy(), Greenfoot.getRandomNumber(600), 0);
+    
+    }
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
+        addObject(new Warplane(), 300, 800);
     }
 }
 
