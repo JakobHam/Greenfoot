@@ -34,6 +34,11 @@ public class Projectile extends Actor
     if(isTouching(Enemy.class))
     {
     removeTouching(Enemy.class);
+    World world = getWorld();
+    MyWorld myWorld = (MyWorld)world;
+    Counter counter = myWorld.getCounter();
+    Counter.addScore();
+    
     }
     }
 }
