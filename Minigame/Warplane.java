@@ -12,28 +12,32 @@ public class Warplane extends Actor
     {
         setRotation(-90);
     }
-
+    int speed = 8;
     public void act() 
     {
+        moveWarplane();
+        fireProjectile();
+    }  
 
+    public void moveWarplane()
+    {
         if(Greenfoot.isKeyDown("a") && Greenfoot.isKeyDown("d")){}
         else{
             if(Greenfoot.isKeyDown("a")){
-                setLocation(getX() - 6, getY());
+                setLocation(getX() - speed, getY());
             }
             if(Greenfoot.isKeyDown("d")){
-                setLocation(getX() + 6, getY());
+                setLocation(getX() + speed, getY());
             }
         }
-        fireProjectile();
-    }  
+    }
     int v = 0;
     public void fireProjectile()
     {
-        
+
         if (Greenfoot.isKeyDown("space")){
             v++;
-            if (v == 10)
+            if (v == 25)
             {
                 getWorld().addObject(new Projectile(), getX(), getY() - 60);
                 v = 0;

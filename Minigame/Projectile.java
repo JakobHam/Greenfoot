@@ -14,31 +14,30 @@ public class Projectile extends Actor
      */
     public Projectile()
     {
-    setRotation(-90);
+        setRotation(-90);
     }
+
     public void act() 
     {
         move(10);
-        hit();
-        remove();
+        hitEnemy();
+ 
     }    
+
     public void remove()
     {
-    if (getY() == 0)
-    {
-    getWorld().removeObject(this);
+
     }
-    }
-    public void hit()
+
+    public void hitEnemy()
     {
-    if(isTouching(Enemy.class))
-    {
-    removeTouching(Enemy.class);
-    World world = getWorld();
-    MyWorld myWorld = (MyWorld)world;
-    Counter counter = myWorld.getCounter();
-    Counter.addScore();
-    
-    }
+        
+        
+         if (getY() == 0)
+        {
+            getWorld().removeObject(this);
+        }
+        /**
+             **/
     }
 }

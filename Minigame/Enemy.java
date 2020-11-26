@@ -17,18 +17,35 @@ public class Enemy extends Actor
     {
         moveEnemy();
         remove();
+        hitEnemy();
+
     }    
 
     public void moveEnemy()
     {
         setLocation(getX(), getY() + 5);
     }
-
     public void remove()
     {
-        if (getY() == 899)
+    if (getY() == 899)
         {
             getWorld().removeObject(this);
         }
     }
+    public void hitEnemy()
+    {
+        Actor projectile = getOneIntersectingObject(Projectile.class); 
+        if (projectile != null) 
+        {
+            getWorld().removeObject(projectile);
+            getWorld().removeObject(this);
+            
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
+        }
+        
+    }
+
 }
