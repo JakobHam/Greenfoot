@@ -37,6 +37,12 @@ public class Enemy2 extends Actor
         {
             if (timeshit == 2)
             {
+                getWorld().removeObject(projectile);
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
+            counter.addScore();
                 getWorld().removeObject(this);
             }
             else remove();
@@ -46,9 +52,10 @@ public class Enemy2 extends Actor
 
     public void remove()
     {
-        if (getY() == 899)
+        if (getY() == getWorld().getHeight()-1)
         {
             getWorld().removeObject(this);
+            Greenfoot.setWorld(new gameover());
         }
     }
 }

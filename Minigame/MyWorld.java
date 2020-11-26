@@ -8,17 +8,20 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    public Counter counter = new Counter();
-    /**
-     * Constructor for objects of class MyWorld.
-
-     */
+    Counter counter = new Counter();
+    //Health health = new Health();
+    
     public MyWorld()
     {    
         super(600, 900, 1);
         prepare();
     }
-
+    /**
+    public Health getHealth()
+    {
+     return health;   
+    }
+    */
     public Counter getCounter()
     {
         return counter;
@@ -55,7 +58,8 @@ public class MyWorld extends World
     private void prepare()
     {
         addObject(new Warplane(), 300, 800);
-        addObject(new Counter(), 84, 20);
+        addObject(counter, 84, 20);
+        //addObject(health, 500, 20);
 
     }
 }

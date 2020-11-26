@@ -37,7 +37,6 @@ public class Projectile extends Actor
         {
             getWorld().removeObject(this);
         }
-        /**
-             **/
+        
     }
 }

@@ -23,7 +23,6 @@ public class Counter extends Actor
 
     public void addScore()
     {
-        score = score + 1;
-        this.score = score;
+        score++;
     }
 }

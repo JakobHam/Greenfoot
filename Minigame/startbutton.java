@@ -22,6 +22,12 @@ public class startbutton extends Actor
         if (Greenfoot.mouseClicked(this))
         {
             Greenfoot.setWorld(new MyWorld());
+            /**
+            World world1 = getWorld();
+            MyWorld myWorld1 = (MyWorld)world1;
+            Health health = myWorld1.getHealth();
+            health.resetlife();
+            */
         }
     }
 }

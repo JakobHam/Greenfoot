@@ -14,6 +14,13 @@ public class gameoverbutton extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        press();
     }    
+    public void press()
+    {
+    if (Greenfoot.mouseClicked(this))
+    {
+    Greenfoot.stop();
+    }
+    }
 }

@@ -16,7 +16,7 @@ public class Enemy extends Actor
     public void act() 
     {
         moveEnemy();
-        remove();
+
         hitEnemy();
 
     }    
@@ -25,27 +25,26 @@ public class Enemy extends Actor
     {
         setLocation(getX(), getY() + 5);
     }
-    public void remove()
-    {
-    if (getY() == 899)
-        {
-            getWorld().removeObject(this);
-        }
-    }
     public void hitEnemy()
     {
         Actor projectile = getOneIntersectingObject(Projectile.class); 
         if (projectile != null) 
         {
             getWorld().removeObject(projectile);
-            getWorld().removeObject(this);
-            
             World world = getWorld();
             MyWorld myWorld = (MyWorld)world;
             Counter counter = myWorld.getCounter();
             counter.addScore();
+            
+            getWorld().removeObject(this);
+        }
+        else if (getY() == getWorld().getHeight()-1)
+        {
+        getWorld().removeObject(this);
+        Greenfoot.setWorld(new gameover());
         }
         
+
     }
 
 }
