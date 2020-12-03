@@ -30,6 +30,16 @@ public class Warplane extends Actor
                 setLocation(getX() + speed, getY());
             }
         }
+        /**
+        if(Greenfoot.isKeyDown("s"))
+        {
+        speed = 14;
+        }
+        else 
+        {
+        speed = 8;
+        }
+        */
     }
     int v = 0;
     public void fireProjectile()

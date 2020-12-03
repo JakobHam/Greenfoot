@@ -1,29 +1,58 @@
-/**
- 
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Health extends Actor
 {
-    int lifes = 0;
+    int lifebarh = 20;
+    int lifebarw = 150;
+    int lifes = 3;
+    int removepixels = (int) lifebarw / lifes;
     public Health()
     {
-    setImage(new GreenfootImage("Lifes:" + lifes, 60, Color.WHITE, Color.BLACK));
+        health();
     }
+
     public void act() 
     {
-        
+        health();
+        gameover();
     }   
+
+    public void health()
+    {   
+        GreenfootImage myImage = new GreenfootImage(lifebarw, lifebarh);
+        myImage.setColor(Color.RED);
+        myImage.fillRect(1, 1, removepixels*lifes, lifebarh);
+        this.setImage(myImage);
+        System.out.println("Test1");
+    }
+
     public void resetlife()
     {
         lifes = 3;
     }
-    public void removelife()
+    int v = 0;
+    public void loselife()
     {
+        v++;
         if(lifes != 0)
         {
-            lifes = lifes - 1;
+            lifes--;
+        }
+        /**if (v == 3)
+        {}
+        else{
+            lifebarw = lifebarw - removepixels;
+        }
+        */
+    }
+
+    public void gameover()
+    {
+        if(lifes == 0)
+        {
+            Greenfoot.setWorld(new gameover());
+            Greenfoot.stop();
         }
     }
 }
-*/

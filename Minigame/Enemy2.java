@@ -16,7 +16,7 @@ public class Enemy2 extends Actor
     {
         moveEnemy();
         hitEnemy();
-        
+
     }    
 
     public void moveEnemy()
@@ -38,15 +38,15 @@ public class Enemy2 extends Actor
             if (timeshit == 2)
             {
                 getWorld().removeObject(projectile);
-            World world = getWorld();
-            MyWorld myWorld = (MyWorld)world;
-            Counter counter = myWorld.getCounter();
-            counter.addScore();
-            counter.addScore();
+                World world = getWorld();
+                MyWorld myWorld = (MyWorld)world;
+                Counter counter = myWorld.getCounter();
+                counter.addScore();
+                counter.addScore();
                 getWorld().removeObject(this);
             }
             else remove();
-            
+
         }
     }
 
@@ -54,8 +54,22 @@ public class Enemy2 extends Actor
     {
         if (getY() == getWorld().getHeight()-1)
         {
+
+            if (timeshit > 0)
+            {
+                World world = getWorld();
+                MyWorld myWorld = (MyWorld)world;
+                Health health = myWorld.getHealth();
+                health.loselife();
+            }
+            else {World world = getWorld();
+                MyWorld myWorld = (MyWorld)world;
+                Health health = myWorld.getHealth();
+                health.loselife();
+                health.loselife();
+            }
             getWorld().removeObject(this);
-            Greenfoot.setWorld(new gameover());
+
         }
     }
 }

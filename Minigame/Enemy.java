@@ -25,6 +25,7 @@ public class Enemy extends Actor
     {
         setLocation(getX(), getY() + 5);
     }
+
     public void hitEnemy()
     {
         Actor projectile = getOneIntersectingObject(Projectile.class); 
@@ -35,16 +36,18 @@ public class Enemy extends Actor
             MyWorld myWorld = (MyWorld)world;
             Counter counter = myWorld.getCounter();
             counter.addScore();
-            
+
             getWorld().removeObject(this);
         }
         else if (getY() == getWorld().getHeight()-1)
         {
-        getWorld().removeObject(this);
-        Greenfoot.setWorld(new gameover());
+
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Health health = myWorld.getHealth();
+            health.loselife();
+            getWorld().removeObject(this);
         }
-        
 
     }
-
 }

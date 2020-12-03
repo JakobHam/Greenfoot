@@ -9,19 +9,19 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
     Counter counter = new Counter();
-    //Health health = new Health();
-    
+    Health health = new Health();
+
     public MyWorld()
     {    
         super(600, 900, 1);
         prepare();
     }
-    /**
+
     public Health getHealth()
     {
-     return health;   
+        return health;   
     }
-    */
+
     public Counter getCounter()
     {
         return counter;
@@ -59,8 +59,9 @@ public class MyWorld extends World
     {
         addObject(new Warplane(), 300, 800);
         addObject(counter, 84, 20);
-        //addObject(health, 500, 20);
-
+        addObject(health, 500, 20);
+        
+        //addObject(new Health(), 500, 20);
     }
 }
 
