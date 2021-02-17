@@ -20,16 +20,13 @@ public class Projectile extends Actor
     public void act() 
     {
         move(10);
-        hitEnemy();
+        remove();
  
     }    
 
+    
+
     public void remove()
-    {
-
-    }
-
-    public void hitEnemy()
     {
         
         

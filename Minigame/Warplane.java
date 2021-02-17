@@ -30,24 +30,16 @@ public class Warplane extends Actor
                 setLocation(getX() + speed, getY());
             }
         }
-        /**
-        if(Greenfoot.isKeyDown("s"))
-        {
-        speed = 14;
-        }
-        else 
-        {
-        speed = 8;
-        }
-        */
+
     }
     int v = 0;
+    int powerupvariable = 10;
     public void fireProjectile()
     {
 
         if (Greenfoot.isKeyDown("space")){
             v++;
-            if (v == 25)
+            if (v == powerupvariable)
             {
                 getWorld().addObject(new Projectile(), getX(), getY() - 60);
                 v = 0;

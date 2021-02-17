@@ -24,12 +24,20 @@ public class Health extends Actor
         myImage.setColor(Color.RED);
         myImage.fillRect(1, 1, removepixels*lifes, lifebarh);
         this.setImage(myImage);
-        System.out.println("Test1");
+        //System.out.println("Test1");
     }
 
     public void resetlife()
     {
         lifes = 3;
+    }
+
+    public void getlife()
+    {
+        if (lifes != 3)
+        {
+            lifes++;
+        }
     }
     int v = 0;
     public void loselife()
@@ -39,12 +47,15 @@ public class Health extends Actor
         {
             lifes--;
         }
-        /**if (v == 3)
-        {}
-        else{
-            lifebarw = lifebarw - removepixels;
+
+    }
+
+    public void damage()
+    {
+        if(lifes != 0)
+        {
+            lifes--;
         }
-        */
     }
 
     public void gameover()

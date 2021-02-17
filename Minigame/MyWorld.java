@@ -27,12 +27,22 @@ public class MyWorld extends World
         return counter;
     }
 
+    public void act()
+    {
+        countdown();
+        
+    }
     int v = 0;
     int x = 0;
-    public void act()
+    int y = 0;
+    int z = 0; 
+    public void countdown()
     {
         v++;
         x++;
+        y++;
+        z++;
+
         if(v == 60){
             addEnemy();
             v = 0;
@@ -40,8 +50,33 @@ public class MyWorld extends World
         if (x == 600)
         {
             addEnemy2();
+
             x = 0;
         }
+        if (z == 600)
+        {
+
+            addpoison();
+            z = 0;
+        }
+        if (y == 1200)
+        {
+            addextralife();
+            y=0;
+
+        }
+    }
+
+    public void addpoison()
+    {
+        addObject(new Poison(), Greenfoot.getRandomNumber(getWidth()), 0);
+
+    }
+
+    public void addextralife()
+    {
+        addObject(new extralife(), Greenfoot.getRandomNumber(getWidth()), 0);
+
     }
 
     public void addEnemy()
@@ -60,7 +95,7 @@ public class MyWorld extends World
         addObject(new Warplane(), 300, 800);
         addObject(counter, 84, 20);
         addObject(health, 500, 20);
-        
+
         //addObject(new Health(), 500, 20);
     }
 }
