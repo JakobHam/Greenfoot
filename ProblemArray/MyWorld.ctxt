@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=MyWorld()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\n\ \n
+comment2.params=
+comment2.target=void\ ersteAufgabe()
+comment3.params=
+comment3.target=void\ zweiteAufgabe()
+comment4.params=
+comment4.target=void\ dritteAufgabe()
+comment5.params=
+comment5.target=void\ vierteAufgabe()
+comment6.params=zahlen\ a\ b
+comment6.target=void\ Swap(int[],\ int,\ int)
+comment7.params=
+comment7.target=void\ f\u00FCnfteAufgabe()
+comment8.params=zahlen\ arraysize
+comment8.target=void\ sort(int[],\ int)
+numComments=9
