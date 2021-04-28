@@ -21,7 +21,9 @@ public class MyWorld extends World
         //zweiteAufgabe();
         //dritteAufgabe();
         //vierteAufgabe();
-        f√ºnfteAufgabe();
+        //fuenfteAufgabe();
+        //Fib();
+        sechsteAufgabe();
     }
 
     public void ersteAufgabe()
@@ -99,7 +101,7 @@ public class MyWorld extends World
 
     }
 
-    public void f√ºnfteAufgabe()
+    public void fuenfteAufgabe()
     {
         int zahlen [] = new int [10];
         int arraysize = 10;
@@ -134,5 +136,69 @@ public class MyWorld extends World
                 }
             }
         }
+    }
+
+    public void Fib()
+    {
+        int range = 100;
+        int zahlen [] = new int [range];
+        zahlen [1] = 1; 
+        zahlen [2] = zahlen [1];
+        for (int i = 3; i < range; i++)
+        {
+            zahlen [i] = zahlen [i-1] + zahlen[i-2];
+        }
+        for (int j = 0; j < range; j++)
+        {
+            System.out.print(zahlen [j] + " ");
+        }
+        System.out.println();
+    }
+
+    public void sechsteAufgabe()
+    {
+        int zahlen [] = new int [10];
+        int arraysize = 10;
+        for (int i = 0; i < 10; i++)
+        {
+            zahlen [i] = Greenfoot.getRandomNumber(100);
+        }
+        for (int j = 0; j < 10 ; j++)
+        {
+            System.out.print(zahlen [j] + " ");
+        }
+        mergesort(zahlen, arraysize);
+        for (int j = 0; j < 10 ; j++)
+        {
+            System.out.print(zahlen [j] + " ");
+        }
+    }
+
+    public void mergesort(int [] zahlen, int arraysize)
+    {
+        // angenommen arraysize ist gerade
+        int temp = 0; // tempor‰rer Speicher um zwei Zahlen zu tauschen
+        int x = 0; //erster Vergkeichswert
+        int a = 1; //muss positiv sein
+        int y = x + a;//zweiter Vergliechswert
+        int b = 1; // grˆﬂe des zu ¸berpr¸fenden Bereichs
+
+        for (int i = 0; i < arraysize; i++)
+        {
+            b = b * 2; // Bereichgrˆﬂe anpassen
+            for ( int j = 0; j < arraysize / b; j++)
+            {
+                for (int h = 0; h < b; h++)
+                {
+                    if (zahlen [x] < zahlen [y])
+                    {
+                        temp = zahlen [x];
+                        zahlen [x] = zahlen [y];
+                        zahlen [y] = temp;
+                    }
+                }
+            }
+
+        } 
     }
 }
