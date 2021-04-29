@@ -177,28 +177,30 @@ public class MyWorld extends World
     public void mergesort(int [] zahlen, int arraysize)
     {
         // angenommen arraysize ist gerade
+        int zahlen2 [] = new int [arraysize]; //zweites Array
         int temp = 0; // temporärer Speicher um zwei Zahlen zu tauschen
         int x = 0; //erster Vergkeichswert
         int a = 1; //muss positiv sein
         int y = x + a;//zweiter Vergliechswert
-        int b = 1; // größe des zu überprüfenden Bereichs
-
-        for (int i = 0; i < arraysize; i++)
+        for (int b = 0; b <= arraysize; b = b * 2) //Wie oft das array mit anderen Abschnitten verglichen werden muss //???
         {
-            b = b * 2; // Bereichgröße anpassen
             for ( int j = 0; j < arraysize / b; j++)
             {
                 for (int h = 0; h < b; h++)
                 {
+                    a = b / 2; //Abstand zwischen den zu vergleichenden Zahlen
+                    x = j * b; //Stelle im Array
                     if (zahlen [x] < zahlen [y])
                     {
-                        temp = zahlen [x];
-                        zahlen [x] = zahlen [y];
-                        zahlen [y] = temp;
+                        zahlen [x] = zahlen2 [x];   
+                        x = x + 1;
+                    }      
+                    else
+                    {
+                        zahlen [y] = zahlen [x];
                     }
                 }
             }
-
         } 
     }
 }
