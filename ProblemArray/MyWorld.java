@@ -23,7 +23,8 @@ public class MyWorld extends World
         //vierteAufgabe();
         //fuenfteAufgabe();
         //Fib();
-        sechsteAufgabe();
+        //sechsteAufgabe();
+        siebteAufgabe();
     }
 
     public void ersteAufgabe()
@@ -178,7 +179,7 @@ public class MyWorld extends World
     {
         // angenommen arraysize ist gerade
         int temp = 0; // temporärer Speicher um zwei Zahlen zu tauschen
-        int x = 0; //erster Vergkeichswert
+        int x = 0; //erster Vergleichswert
         int a = 1; //muss positiv sein
         int y = x + a;//zweiter Vergliechswert
         int b = 1; // größe des zu überprüfenden Bereichs
@@ -200,5 +201,58 @@ public class MyWorld extends World
             }
 
         } 
+    }
+
+    public void siebteAufgabe()
+    {
+        double x = 0;
+
+        double Array [] = new double [100];
+        for (int i = 0; i < 100; i++)
+        {
+            Array [i] = Greenfoot.getRandomNumber(100);
+            //System.out.println(Array [i]);
+        }
+
+        x = Array [1];
+        for (int h = 0; h < 99; h++)
+        {
+            if (x < Array [h + 1])
+            {
+                x = Array [h + 1];
+            }
+        }
+        System.out.println("Max: " + x);
+
+        for (int g = 0; g < 99; g++)
+        {
+            if (x > Array [g +1])
+            {
+                x = Array [g + 1];
+            }
+        }
+        System.out.println("Min: " + x);
+
+        x = Array [1];
+        for (int j = 0; j < 99; j++)
+        {
+            x = Array [j + 1] + x;
+        }
+        System.out.println("Durchschnitt: " + x / 100);
+
+        for (int j = 0; j < 100 - 1; j++) 
+        {
+            for (int i = 0; i < 100 - 1; i++)
+            {
+                if (Array [i] >Array[i + 1])
+                {
+                    double y = Array [i];
+                    Array [i] = Array [i + 1];
+                    Array [i + 1] = x;
+
+                }
+            }
+        }
+        System.out.println("Median: " + Array [50]);
     }
 }
