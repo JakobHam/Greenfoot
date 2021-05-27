@@ -24,7 +24,8 @@ public class MyWorld extends World
         //fuenfteAufgabe();
         //Fib();
         //sechsteAufgabe();
-        siebteAufgabe();
+        //siebteAufgabe();
+        System.out.println(Teilbarkeit(4, 2));
     }
 
     public void ersteAufgabe()
@@ -175,6 +176,8 @@ public class MyWorld extends World
         }
     }
 
+    
+    
     public void mergesort(int [] zahlen, int arraysize)
     {
         // angenommen arraysize ist gerade
@@ -203,6 +206,7 @@ public class MyWorld extends World
                 }
             }
         } 
+        
     }
 
     public void siebteAufgabe()
@@ -257,4 +261,17 @@ public class MyWorld extends World
         }
         System.out.println("Median: " + Array [50]);
     }
+
+    public boolean Teilbarkeit(int i1, int i2)
+    {
+        /*
+         * if (i1 % i2 == 0)
+         * return true;
+         * else
+         * return false;
+        */
+        return i1 % i2 == 0;
+    }
+
 }
+
