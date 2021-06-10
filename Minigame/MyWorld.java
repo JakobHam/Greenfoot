@@ -75,7 +75,7 @@ public class MyWorld extends World
 
     public void addextralife()
     {
-        addObject(new extralife(), Greenfoot.getRandomNumber(getWidth()), 0);
+        a;
 
     }
 
