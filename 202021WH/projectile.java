@@ -8,14 +8,24 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class projectile extends Actor
 {
+    boolean a = false;
     public projectile(int Rotation)
     {
-    setRotation(Rotation);
+        setRotation(Rotation);
     }
+
     public void act() 
     {
         move(10);
-        
-        //getWorld().removeObject(this);
+
+        if (Greenfoot.isKeyDown("space") & a == true)
+        {
+            getWorld().removeObject(this);
+            a=false;
+        }else{
+            if (!Greenfoot.isKeyDown("space")){
+                a=true;
+            }
+        }
     }    
 }
