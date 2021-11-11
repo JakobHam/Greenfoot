@@ -8,9 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class food extends Actor
 {
-  
+    
+    public food()
+    {
+        GreenfootImage img = new GreenfootImage(15, 15); 
+        img.setColor(Color.GREEN);
+        img.fill();
+        setImage(img);
+
+    }
+
     public void act()
     {
-        // Add your action code here.
+        if (isTouching(snakebody.class) == true)
+        {
+            
+            getWorld().removeObject(this);
+            
+        }
     }
 }

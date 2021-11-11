@@ -9,14 +9,22 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class MyWorld extends World
 {
 
-    /**
-     * Constructor for objects of class MyWorld.
-     * 
-     */
+    
     public MyWorld()
     {    
         super(30, 30, 15); 
-        addObject(new snakebody(), 1, 1);
+        addSnakebody();
+        addFood();
+    }
+
+    public void addSnakebody()
+    {
+        addObject(new snakebody(), 15, 15);
+    }
+
+    public void addFood()
+    {
+        addObject(new food(),Greenfoot.getRandomNumber(30),Greenfoot.getRandomNumber(30));
 
     }
 
