@@ -20,7 +20,7 @@ public class food extends Actor
 
     public void act()
     {
-        if (isTouching(snakebody.class) == true)
+        if (isTouching(snakehead.class) == true)
         {
             
             getWorld().removeObject(this);

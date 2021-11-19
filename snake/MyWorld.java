@@ -19,7 +19,8 @@ public class MyWorld extends World
 
     public void addSnakebody()
     {
-        addObject(new snakebody(), 15, 15);
+        addObject(new snakehead(), 15, 15);
+        
     }
 
     public void addFood()
