@@ -8,45 +8,23 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class snaketail extends Actor
 {
-    int b;
-    private int score;
-    private int x; 
-    private int y;
-
-    public snaketail(int score, int x, int y)
-    {
-        this.score = score;
-        this.x = x;
-        this.y = y;
+    private snaketail next;
+    public snaketail()
+    {    
         GreenfootImage img = new GreenfootImage(15, 15); 
-        img.setColor(Color.BLACK);
+        img.setColor(Color.RED);
         img.fill();
         setImage(img);
     }
-snakehead s = new snakehead();
-    public void act()
+    
+    public snaketail getNext()
     {
-        timer();
-        move();
-        System.out.println(x);
-        System.out.println(y);
-        x = snakehead.getX();
-        
+        return next;
     }
-
-    public int timer()
+    
+    public void setNext(snaketail next)
     {
-        b++;
-        return b;
+        this.next =next;
     }
-
-    public void move()
-    {
-
-        if (b == 10 * score)
-        {
-            setLocation(x, y);
-            b = 0;
-        }
-    }
+    
 }
