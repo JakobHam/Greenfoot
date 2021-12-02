@@ -11,8 +11,12 @@ public class MyWorld extends World
 
     boolean stop = false;
     boolean one = false;
+<<<<<<< HEAD
     
     String refernce = "o";
+=======
+
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
     String a = " ";
     String b = " ";
     String c = " ";
@@ -46,10 +50,17 @@ public class MyWorld extends World
     public void act() 
     {
         keylistener(Playericon, one);
+<<<<<<< HEAD
         
         if (Greenfoot.isKeyDown("enter") & stop == true)
         {
             
+=======
+
+        if (Greenfoot.isKeyDown("enter") & stop == true)
+        {
+
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             System.out.println("   "+ a +"   |   "+ b +"   |   "+ c +"   ");
             System.out.println("_______|_______|_______");
             System.out.println("   "+ d +"   |   "+ e +"   |   "+ f +"   ");
@@ -67,13 +78,20 @@ public class MyWorld extends World
             }
             System.out.println();
             System.out.println();
+<<<<<<< HEAD
             win(a,b,c,d,e,f,g,h,i, refernce);
+=======
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             System.out.println("Choose a number from 1 to 9 to place your " + Playericon);
             System.out.println("1   2   3");
             System.out.println("4   5   6");
             System.out.println("7   8   9");
             stop = false;
+<<<<<<< HEAD
             //one = false;
+=======
+            one = false;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
         }else
         {
             if (!Greenfoot.isKeyDown("enter"))
@@ -85,61 +103,105 @@ public class MyWorld extends World
 
     public String keylistener(String Playericon, boolean one)
     {
+<<<<<<< HEAD
         //if (one == false)
         //{
+=======
+        if (one == false)
+        {
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             if (Greenfoot.isKeyDown("1"))
             {
                 a = Playericon;
                 return  a;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
                 
             }
             if (Greenfoot.isKeyDown("2"))
             {
                 b = Playericon;
                 return b;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
             if (Greenfoot.isKeyDown("3"))
             {
                 c = Playericon;
                 return c;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
             if (Greenfoot.isKeyDown("4"))
             {
                 d = Playericon;
                 return d;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
             if (Greenfoot.isKeyDown("5"))
             {
                 e = Playericon;
                 return e;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
             if (Greenfoot.isKeyDown("6"))
             {
                 f = Playericon;
                 return f;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+            }
+            if (Greenfoot.isKeyDown("7"))
+            {
+                g = Playericon;
+                return g;
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
             if (Greenfoot.isKeyDown("8"))
             {
                 h = Playericon;
                 return h;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
 
             if (Greenfoot.isKeyDown("9"))
             {
                 i = Playericon;
                 return i;
+<<<<<<< HEAD
                 //one = true;
+=======
+                one = true;
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
             }
             else
             {return " ";}
 
+<<<<<<< HEAD
        // }
     }
     public void win(String a, String b, String c, String d, String e, String f, String g, String h, String i, String reference)
@@ -155,4 +217,10 @@ public class MyWorld extends World
 
 }
 }
+=======
+        }
+    }
+
+}
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe
 

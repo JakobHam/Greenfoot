@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #BlueJ class context
 comment0.target=MyWorld
 comment0.text=\r\n\ Aufage1\:\ verhindere\ dass\ man\ mehrere\ Kreuze/\ Kreise\ pro\ Zug\ setzten\ kann\ \r\n\ -->\ boolean\ one\!\!\!\r\n
@@ -10,3 +11,15 @@ comment3.target=java.lang.String\ keylistener(java.lang.String,\ boolean)
 comment4.params=a\ b\ c\ d\ e\ f\ g\ h\ i\ reference
 comment4.target=void\ win(java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String,\ java.lang.String)
 numComments=5
+=======
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=MyWorld()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=Playericon
+comment3.target=java.lang.String\ keylistener(java.lang.String)
+numComments=4
+>>>>>>> cd40bbf48a910d5b7453bbfab62431296753adbe

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=splash
+comment0.text=\n\ Write\ a\ description\ of\ class\ splash\ here.\n\ \n\ @Andrico\ Zacharia\ \n\ @v1.0\ 26\ January\ 2018\n
+comment1.params=
+comment1.target=splash()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ gameOver.\n\ \n
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ gameWorld()
+numComments=4

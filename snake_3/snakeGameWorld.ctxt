@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=snakeGameWorld
+comment0.text=\n\ This\ game\ is\ a\ take\ on\ the\ traditional\ Snake\ game\ found\ on\ old\ Nokia\ phones.\n\ To\ Play\ use\ the\ arrow\ keys\ on\ the\ keyboard.\n\ \n\ @author\ (Andrico\ Zacharia)\ \n\ @version\ (v1.0\ 26/01/2018)\n
+comment1.params=
+comment1.target=snakeGameWorld()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ snakeGameWorld.\n\ \n
+comment2.params=
+comment2.target=void\ addFood()
+comment3.params=
+comment3.target=void\ gameOver()
+comment4.params=
+comment4.target=void\ splash()
+numComments=5
