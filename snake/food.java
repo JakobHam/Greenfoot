@@ -16,13 +16,17 @@ public class food extends Actor
         img.fill();
         setImage(img);
 
+        
     }
 
+int score; 
     public void act()
     {
         if (isTouching(snakehead.class) == true)
         {
-            
+            score++;
+            Count.setScore(score);
+            getWorld().addObject(new food(), Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(30));
             getWorld().removeObject(this);
             
         }

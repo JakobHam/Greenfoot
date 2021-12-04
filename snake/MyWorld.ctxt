@@ -8,5 +8,5 @@ comment2.target=void\ addSnake()
 comment3.params=
 comment3.target=void\ addFood()
 comment4.params=
-comment4.target=void\ act()
+comment4.target=void\ addScore()
 numComments=5

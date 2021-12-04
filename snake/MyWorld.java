@@ -13,7 +13,8 @@ public class MyWorld extends World
     {    
         super(30, 30, 15); 
         addSnake();
-        //addFood();
+        addFood();
+        addScore();
     }
 
     public void addSnake()
@@ -35,15 +36,16 @@ public class MyWorld extends World
 
         }
     }
+
     public void addFood()
     {
         addObject(new food(),Greenfoot.getRandomNumber(30),Greenfoot.getRandomNumber(30));
 
     }
 
-    public void act()
+    public void addScore()
     {
-
+        score getScore = new score();
+        addObject(getScore , 3, 1);
     }
-
 }

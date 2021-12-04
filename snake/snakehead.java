@@ -10,7 +10,7 @@ public class snakehead extends Actor
 {
     private snaketail last;
     private snaketail first;
-
+    String direction;
     public snakehead()
     {
         GreenfootImage img = new GreenfootImage(15, 15); 
@@ -25,23 +25,20 @@ public class snakehead extends Actor
 
         move();
         directions();
-        eatFood();
+        //eatFood();
     }
     int x;
     public void move()
     {
-        
+
         x++;
         if (x == 10)
         {
-            
-
-            
             last.setLocation(getX(), getY());
             first.setNext(last);
             first = last;
             last = last.getNext(); 
-            
+
             move(1);
             x = 0;
         }
@@ -50,10 +47,23 @@ public class snakehead extends Actor
 
     public void directions()
     {
-        if (Greenfoot.isKeyDown("down")) turnTowards(getX(),getY() + 1);
-        if (Greenfoot.isKeyDown("up")) turnTowards(getX(),getY() - 1);
-        if (Greenfoot.isKeyDown("right")) turnTowards(getX() + 1,getY());
-        if (Greenfoot.isKeyDown("left")) turnTowards(getX() - 1,getY());
+        if (Greenfoot.isKeyDown("down") && direction != "up") 
+        {
+            turnTowards(getX(),getY() + 1 );
+            direction = "down";
+        }
+        if (Greenfoot.isKeyDown("up") && direction != "down")
+        {   turnTowards(getX(),getY() - 1); 
+            direction = "up";
+        }
+        if (Greenfoot.isKeyDown("right") && direction != "left") {
+            turnTowards(getX() + 1,getY()); 
+            direction = "right";
+        }
+        if (Greenfoot.isKeyDown("left") && direction != "right") {
+            turnTowards(getX() - 1,getY()); 
+            direction = "left";
+        }
     }
 
     public void setLast (snaketail last)
@@ -68,6 +78,9 @@ public class snakehead extends Actor
 
     public void eatFood()
     {
-
+        if (isTouching(food.class) == true)
+        {
+            
+        }
     }
 }
