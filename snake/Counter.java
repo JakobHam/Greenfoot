@@ -6,10 +6,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Count extends Actor
+public class Counter extends Actor
 {
     int score;
-    public Count()
+    public Counter()
     {
         setImage (new GreenfootImage("Score: " + score, 30, Color.BLACK, Color.WHITE));
     }
@@ -19,8 +19,8 @@ public class Count extends Actor
         setImage (new GreenfootImage("Score: " + score, 30, Color.BLACK, Color.WHITE));
     }
 
-    public void setScore(int score)
+    public void addScore()
     {
-        this.score = score; 
+        score++;
     }
 }

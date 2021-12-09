@@ -25,7 +25,10 @@ int score;
         if (isTouching(snakehead.class) == true)
         {
             score++;
-            Count.setScore(score);
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
             getWorld().addObject(new food(), Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(30));
             getWorld().removeObject(this);
             

@@ -25,22 +25,56 @@ public class snakehead extends Actor
 
         move();
         directions();
-        //eatFood();
+
+        biteSnake();
+        hitWall();
     }
     int x;
+    int y;
+    int a;
+    int b;
     public void move()
     {
 
         x++;
+
         if (x == 10)
+        {
+
+            a = getX();
+            b = getY();
+            move(1);
+            last.setLocation(a, b);
+
+            first.setNext(last);
+            first = last;
+            last = last.getNext(); 
+
+            x = 0;
+            
+            
+           /** 
+            x++;
+        y++;
+        if (x == 10 & isAtEdge() != true)
         {
             last.setLocation(getX(), getY());
             first.setNext(last);
             first = last;
             last = last.getNext(); 
 
-            move(1);
+          
             x = 0;
+        }//else 
+        //x = 5;
+
+        if (y == 10)
+        {
+            move(1);
+            y = 0;
+            x = 0;
+        }
+         */
         }
 
     }
@@ -76,11 +110,17 @@ public class snakehead extends Actor
         this.first = first;
     }
 
-    public void eatFood()
+    public void biteSnake()
     {
-        if (isTouching(food.class) == true)
+        if (isTouching(snaketail.class) == true)
         {
-            
+            Greenfoot.setWorld(new Loosescreen());
         }
+    }
+    int time = 300;
+    public void hitWall()
+    {
+        if (isAtEdge() == true)
+        {}
     }
 }

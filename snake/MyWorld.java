@@ -42,10 +42,17 @@ public class MyWorld extends World
         addObject(new food(),Greenfoot.getRandomNumber(30),Greenfoot.getRandomNumber(30));
 
     }
-
+    Counter counter  = new Counter();
     public void addScore()
     {
-        score getScore = new score();
-        addObject(getScore , 3, 1);
+
+        addObject(counter , 3, 1);
     }
+
+    public Counter getCounter()
+    {
+        return counter;
+    }
+    
+    
 }
