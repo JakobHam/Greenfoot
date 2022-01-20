@@ -1,10 +1,20 @@
 #BlueJ class context
 comment0.target=snakehead
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ snakebody\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ snakebody\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=snakehead()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=void\ move()
-numComments=4
+comment4.params=
+comment4.target=void\ directions()
+comment5.params=last
+comment5.target=void\ setLast(snaketail)
+comment6.params=first
+comment6.target=void\ setFirst(snaketail)
+comment7.params=
+comment7.target=void\ biteSnake()
+comment8.params=
+comment8.target=void\ hitWall()
+numComments=9

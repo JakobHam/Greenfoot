@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+int score;
     public MyWorld()
     {    
         super(30, 30, 15); 
@@ -54,5 +54,8 @@ public class MyWorld extends World
         return counter;
     }
     
-    
+    public void addScore1()
+    {
+        score++;
+    }
 }

@@ -6,6 +6,6 @@ public class Text extends Actor
     
     public Text() 
     {
-        setImage (new GreenfootImage("press Space to start the game", 40, Color.BLACK, Color.WHITE));
+        setImage (new GreenfootImage("press Space to start the game", 30, Color.BLACK, Color.WHITE));
     }       
 }

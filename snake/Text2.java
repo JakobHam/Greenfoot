@@ -14,7 +14,7 @@ public class Text2 extends Actor
      */
     public Text2() 
     {
-                        setImage (new GreenfootImage("press Space to retart", 40, Color.BLACK, Color.WHITE));
+                        setImage (new GreenfootImage("press Space to restart", 40, Color.BLACK, Color.WHITE));
 
     }    
 }

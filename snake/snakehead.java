@@ -51,30 +51,28 @@ public class snakehead extends Actor
             last = last.getNext(); 
 
             x = 0;
-            
-            
-           /** 
+
+            /** 
             x++;
-        y++;
-        if (x == 10 & isAtEdge() != true)
-        {
+            y++;
+            if (x == 10 & isAtEdge() != true)
+            {
             last.setLocation(getX(), getY());
             first.setNext(last);
             first = last;
             last = last.getNext(); 
 
-          
             x = 0;
-        }//else 
-        //x = 5;
+            }//else 
+            //x = 5;
 
-        if (y == 10)
-        {
+            if (y == 10)
+            {
             move(1);
             y = 0;
             x = 0;
-        }
-         */
+            }
+             */
         }
 
     }
