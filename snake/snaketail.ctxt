@@ -1,14 +1,10 @@
 #BlueJ class context
 comment0.target=snaketail
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ snaketail\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ snaketail\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=snaketail()
 comment2.params=
-comment2.target=snaketail\ getBefore()
-comment3.params=before
-comment3.target=void\ setBefore(snaketail)
-comment4.params=
-comment4.target=snaketail\ getNext()
-comment5.params=next
-comment5.target=void\ setNext(snaketail)
-numComments=6
+comment2.target=snaketail\ getNext()
+comment3.params=next
+comment3.target=void\ setNext(snaketail)
+numComments=4

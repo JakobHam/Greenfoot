@@ -10,7 +10,15 @@ public class snakehead extends Actor
 {
     private snaketail last;
     private snaketail first;
+    private snaketail newfirst;
     String direction;
+
+    int length;
+    int oldlength;
+
+    int t;
+    int a;
+    int b;
     public snakehead()
     {
         GreenfootImage img = new GreenfootImage(15, 15); 
@@ -28,51 +36,57 @@ public class snakehead extends Actor
 
         biteSnake();
         hitWall();
+        eatfood();
     }
-    int x;
-    int y;
-    int a;
-    int b;
+
     public void move()
     {
 
-        x++;
+        t++;
 
-        if (x == 10)
+        if (t == 10 )
         {
-
-            a = getX();
-            b = getY();
-            move(1);
-            last.setLocation(a, b);
-
-            first.setNext(last);
-            first = last;
-            last = last.getNext(); 
-
-            x = 0;
-
-            /** 
-            x++;
-            y++;
-            if (x == 10 & isAtEdge() != true)
+            if (isAtEdge() == true)
             {
-            last.setLocation(getX(), getY());
-            first.setNext(last);
-            first = last;
-            last = last.getNext(); 
-
-            x = 0;
-            }//else 
-            //x = 5;
-
-            if (y == 10)
+            
+            }else
             {
-            move(1);
-            y = 0;
-            x = 0;
+
+                a = getX();
+                b = getY();
+                move(1);
+
+                if(length > oldlength)
+                {
+                    oldlength = length;
+
+                    snaketail tail = new snaketail();
+                    getWorld().addObject(tail, a, b);
+                    first.setNext(tail);
+                    newfirst = tail;
+                    first = last;
+
+                    first = newfirst;
+                }
+                else
+                {
+                    last.setLocation(a, b);
+
+                    first.setNext(last);
+                    first = last;
+                    last = last.getNext(); 
+                }
+                t = 0;
             }
-             */
+        }
+
+    }
+
+    public void eatfood()
+    {
+        if (isTouching(food.class) == true)
+        {
+            length ++;
         }
 
     }
@@ -118,7 +132,8 @@ public class snakehead extends Actor
     int time = 300;
     public void hitWall()
     {
-        if (isAtEdge() == true)
-        {}
+
+
     }
+
 }

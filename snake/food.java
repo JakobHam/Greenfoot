@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class food extends Actor
 {
-    
+
     public food()
     {
         GreenfootImage img = new GreenfootImage(15, 15); 
@@ -16,23 +16,15 @@ public class food extends Actor
         img.fill();
         setImage(img);
 
-        
     }
-
-int score; 
+    int score; 
     public void act()
     {
         if (isTouching(snakehead.class) == true)
-        {
-            score++;
-            World world = getWorld();
-            MyWorld myWorld = (MyWorld)world;
-            Counter counter = myWorld.getCounter();
-            counter.addScore();
-            
+        {           
             getWorld().addObject(new food(), Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(30));
             getWorld().removeObject(this);
-            
+
         }
     }
 }

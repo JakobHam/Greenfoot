@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-int score;
+    int score;
     public MyWorld()
     {    
         super(30, 30, 15); 
@@ -30,7 +30,7 @@ int score;
             tail.setNext(tailold);
             tailold = tail;
             if(i == 0)
-                head.setFirst(tail);
+                head.setFirst(tail); 
             if(i == 4)
                 head.setLast(tail);
 
@@ -42,20 +42,10 @@ int score;
         addObject(new food(),Greenfoot.getRandomNumber(30),Greenfoot.getRandomNumber(30));
 
     }
-    Counter counter  = new Counter();
+
     public void addScore()
     {
 
-        addObject(counter , 3, 1);
-    }
-
-    public Counter getCounter()
-    {
-        return counter;
-    }
-    
-    public void addScore1()
-    {
-        score++;
+        addObject(new Counter() , 3, 1);
     }
 }
