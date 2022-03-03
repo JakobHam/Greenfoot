@@ -11,12 +11,15 @@ public class snakehead extends Actor
     private snaketail last;
     private snaketail first;
     private snaketail newfirst;
+    private Counter counter;
     String direction;
+    String edge;
 
     int length;
     int oldlength;
 
     int t;
+
     int a;
     int b;
     public snakehead()
@@ -25,7 +28,6 @@ public class snakehead extends Actor
         img.setColor(Color.BLACK);
         img.fill();
         setImage(img);
-
     }
 
     public void act()
@@ -41,45 +43,71 @@ public class snakehead extends Actor
 
     public void move()
     {
+        a = getX();
+        b = getY();
+        move(1);
 
-        t++;
-
-        if (t == 10 )
+        if (a == 1)
         {
-            if (isAtEdge() == true)
-            {
+            edge = "left";
+        }else edge = null;
+        if (a == 30)
+        {
+            edge = "right";
+        }else edge = null;
+        if (b == 1)
+        {
+            edge = "up";
+        }else edge = null;
+        if (b == 30)
+        {
+            edge = "down";
+        }else edge = null;
+
+        
+        if (edge != null)
+        {
+            t++;
             
-            }else
+            last.setLocation(a, b);
+
+            first.setNext(last);
+            first = last;
+            last = last.getNext();
+
+            if(t == 5)
             {
-
-                a = getX();
-                b = getY();
-                move(1);
-
-                if(length > oldlength)
-                {
-                    oldlength = length;
-
-                    snaketail tail = new snaketail();
-                    getWorld().addObject(tail, a, b);
-                    first.setNext(tail);
-                    newfirst = tail;
-                    first = last;
-
-                    first = newfirst;
-                }
-                else
-                {
-                    last.setLocation(a, b);
-
-                    first.setNext(last);
-                    first = last;
-                    last = last.getNext(); 
-                }
-                t = 0;
+                Greenfoot.setWorld(new Loosescreen());
+                t=0;
             }
-        }
+        }else
+        {
 
+            a = getX();
+            b = getY();
+
+            if(length > oldlength)
+            {
+                oldlength = length;
+
+                snaketail tail = new snaketail();
+                getWorld().addObject(tail, a, b);
+                first.setNext(tail);
+                newfirst = tail;
+                first = last;
+
+                first = newfirst;
+            }
+            else
+            {
+                last.setLocation(a, b);
+
+                first.setNext(last);
+                first = last;
+                last = last.getNext(); 
+            }
+
+        }
     }
 
     public void eatfood()
@@ -87,6 +115,8 @@ public class snakehead extends Actor
         if (isTouching(food.class) == true)
         {
             length ++;
+
+            counter.addScore();
         }
 
     }
@@ -124,7 +154,7 @@ public class snakehead extends Actor
 
     public void biteSnake()
     {
-        if (isTouching(snaketail.class) == true)
+        if (isTouching(snaketail.class) == true && isAtEdge() == false)
         {
             Greenfoot.setWorld(new Loosescreen());
         }
@@ -132,7 +162,6 @@ public class snakehead extends Actor
     int time = 300;
     public void hitWall()
     {
-
 
     }
 

@@ -14,7 +14,8 @@ public class MyWorld extends World
         super(30, 30, 15); 
         addSnake();
         addFood();
-        addScore();
+        addcounter();
+
     }
 
     public void addSnake()
@@ -36,6 +37,11 @@ public class MyWorld extends World
 
         }
     }
+    public Counter counter = new Counter();
+    public void addcounter()
+    {
+        addObject(counter , 3, 1);
+    }
 
     public void addFood()
     {
@@ -46,6 +52,6 @@ public class MyWorld extends World
     public void addScore()
     {
 
-        addObject(new Counter() , 3, 1);
     }
+
 }

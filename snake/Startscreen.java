@@ -12,7 +12,10 @@ public class Startscreen extends World
     public Startscreen()
     {    
         super(450, 450, 1); 
+        
         addObject(new Text(), 225, 225);
+        Greenfoot.setSpeed(35);
+        Greenfoot.start();
     }
 
     public void act()
