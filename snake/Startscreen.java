@@ -14,7 +14,7 @@ public class Startscreen extends World
         super(450, 450, 1); 
         
         addObject(new Text(), 225, 225);
-        Greenfoot.setSpeed(35);
+        Greenfoot.setSpeed(30);
         Greenfoot.start();
     }
 

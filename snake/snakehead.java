@@ -12,16 +12,12 @@ public class snakehead extends Actor
     private snaketail first;
     private snaketail newfirst;
     private Counter counter;
-    String direction;
-    String edge;
+    String direction="right";
 
     int length;
     int oldlength;
 
-    int t;
-
-    int a;
-    int b;
+    int timeStuckAtEdge;
     public snakehead()
     {
         GreenfootImage img = new GreenfootImage(15, 15); 
@@ -32,60 +28,39 @@ public class snakehead extends Actor
 
     public void act()
     {
-
+        eatfood();
+        
         move();
-        directions();
-
+directions();
         biteSnake();
         hitWall();
-        eatfood();
+
+    }
+    
+    public boolean isAtEdgeMovingOutward()
+    {
+        return ( getX() == 0 && direction == "left" ) ||
+            ( getY() == getWorld().getHeight()-1 && direction == "down" )||
+            ( getY() == 0 && direction == "up" ) ||
+            ( getX() == getWorld().getWidth()-1 && direction == "right");
     }
 
     public void move()
     {
-        a = getX();
-        b = getY();
-        move(1);
-
-        if (a == 1)
+        if (isAtEdgeMovingOutward())
         {
-            edge = "left";
-        }else edge = null;
-        if (a == 30)
-        {
-            edge = "right";
-        }else edge = null;
-        if (b == 1)
-        {
-            edge = "up";
-        }else edge = null;
-        if (b == 30)
-        {
-            edge = "down";
-        }else edge = null;
-
-        
-        if (edge != null)
-        {
-            t++;
-            
-            last.setLocation(a, b);
-
-            first.setNext(last);
-            first = last;
-            last = last.getNext();
-
-            if(t == 5)
+            timeStuckAtEdge++;
+            if(timeStuckAtEdge == 5)
             {
                 Greenfoot.setWorld(new Loosescreen());
-                t=0;
+                timeStuckAtEdge=0;
+
             }
-        }else
-        {
-
-            a = getX();
-            b = getY();
-
+        } else {
+            int a=getX();
+            int b=getY();
+            move(1);
+            timeStuckAtEdge =0;
             if(length > oldlength)
             {
                 oldlength = length;
@@ -112,7 +87,7 @@ public class snakehead extends Actor
 
     public void eatfood()
     {
-        if (isTouching(food.class) == true)
+        if (isTouching(food.class))
         {
             length ++;
 
@@ -154,7 +129,7 @@ public class snakehead extends Actor
 
     public void biteSnake()
     {
-        if (isTouching(snaketail.class) == true && isAtEdge() == false)
+        if (isTouching(snaketail.class) == true && isAtEdge() == true)
         {
             Greenfoot.setWorld(new Loosescreen());
         }
