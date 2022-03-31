@@ -14,8 +14,8 @@ public class snakehead extends Actor
     private Counter counter;
     String direction="right";
 
-    int length;
-    int oldlength;
+    int length = 5;
+    int oldlength = 5;
 
     int timeStuckAtEdge;
     public snakehead()
@@ -28,21 +28,29 @@ public class snakehead extends Actor
 
     public void act()
     {
-        eatfood();
-        
         move();
-directions();
-        biteSnake();
-        hitWall();
+        eatfood();
+        directions();
+        biteSnake();       
+    }
+
+    public void eatfood()
+    {
+        if (isTouching(food.class))
+        {
+            length++;
+            removeTouching(food.class);
+            getWorld().addObject(new food(), Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(30));
+        }
 
     }
-    
+
     public boolean isAtEdgeMovingOutward()
     {
         return ( getX() == 0 && direction == "left" ) ||
-            ( getY() == getWorld().getHeight()-1 && direction == "down" )||
-            ( getY() == 0 && direction == "up" ) ||
-            ( getX() == getWorld().getWidth()-1 && direction == "right");
+        ( getY() == getWorld().getHeight()-1 && direction == "down" )||
+        ( getY() == 0 && direction == "up" ) ||
+        ( getX() == getWorld().getWidth()-1 && direction == "right");
     }
 
     public void move()
@@ -59,12 +67,12 @@ directions();
         } else {
             int a=getX();
             int b=getY();
+
             move(1);
             timeStuckAtEdge =0;
             if(length > oldlength)
             {
                 oldlength = length;
-
                 snaketail tail = new snaketail();
                 getWorld().addObject(tail, a, b);
                 first.setNext(tail);
@@ -76,24 +84,11 @@ directions();
             else
             {
                 last.setLocation(a, b);
-
                 first.setNext(last);
                 first = last;
                 last = last.getNext(); 
             }
-
         }
-    }
-
-    public void eatfood()
-    {
-        if (isTouching(food.class))
-        {
-            length ++;
-
-            counter.addScore();
-        }
-
     }
 
     public void directions()
@@ -102,15 +97,15 @@ directions();
         {
             turnTowards(getX(),getY() + 1 );
             direction = "down";
-        }
-        if (Greenfoot.isKeyDown("up") && direction != "down")
+        }else
+            if (Greenfoot.isKeyDown("up") && direction != "down")
         {   turnTowards(getX(),getY() - 1); 
             direction = "up";
-        }
-        if (Greenfoot.isKeyDown("right") && direction != "left") {
+        }else 
+            if (Greenfoot.isKeyDown("right") && direction != "left") {
             turnTowards(getX() + 1,getY()); 
             direction = "right";
-        }
+        }else 
         if (Greenfoot.isKeyDown("left") && direction != "right") {
             turnTowards(getX() - 1,getY()); 
             direction = "left";
@@ -129,15 +124,9 @@ directions();
 
     public void biteSnake()
     {
-        if (isTouching(snaketail.class) == true && isAtEdge() == true)
+        if (isTouching(snaketail.class) == true)
         {
             Greenfoot.setWorld(new Loosescreen());
         }
     }
-    int time = 300;
-    public void hitWall()
-    {
-
-    }
-
 }

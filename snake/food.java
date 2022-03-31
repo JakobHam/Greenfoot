@@ -20,11 +20,5 @@ public class food extends Actor
     int score; 
     public void act()
     {
-        if (isTouching(snakehead.class) == true)
-        {           
-            getWorld().addObject(new food(), Greenfoot.getRandomNumber(30), Greenfoot.getRandomNumber(30));
-            getWorld().removeObject(this);
-
-        }
     }
 }

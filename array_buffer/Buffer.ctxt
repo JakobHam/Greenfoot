@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Buffer
+comment0.text=\n\ Write\ a\ description\ of\ class\ Buffer\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Buffer()
+comment2.params=
+comment2.target=int\ numberOfElements()
+comment3.params=
+comment3.target=boolean\ isEmpty()
+comment4.params=
+comment4.target=boolean\ isFull()
+comment5.params=newitem
+comment5.target=void\ put(int)
+comment6.params=
+comment6.target=int\ get()
+numComments=7
