@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=FiFo
+comment0.text=\n\ Write\ a\ description\ of\ class\ FiFo\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=FiFo()
+comment2.params=
+comment2.target=int\ numberOfElements()
+comment3.params=
+comment3.target=boolean\ isEmpty()
+comment4.params=newvalue
+comment4.target=void\ put(int)
+comment5.params=
+comment5.target=int\ get()
+numComments=6

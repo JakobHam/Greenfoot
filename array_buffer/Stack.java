@@ -1,16 +1,16 @@
 /**
- * Write a description of class Buffer here.
+ * Write a description of class Stack here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Buffer  
+public class Stack  
 {
     int arrsize = 100;
-    int buffer [] = new int [arrsize];
-    int currentFillrate=0;
+    int stack [] = new int [arrsize];
+    int currentFillrate = 0;
 
-    public Buffer()
+    public Stack()
     {
     }
 
@@ -33,23 +33,17 @@ public class Buffer
     {
         if(!isFull())
         {
-            buffer [numberOfElements()] = newitem;
+            stack [numberOfElements()] = newitem;
             currentFillrate++;
         }
     }
 
     public int get()
     {
-        int x = 0;
         if(!isEmpty())
         {
-            x = buffer[0];
-            for (int i = 0; i < numberOfElements()-1; i++)
-            {
-                buffer [i] = buffer[i+1];
-            }
             currentFillrate--;
-        }
-        return x;
+            return stack [numberOfElements()];
+        }else return 0;
     }
 }
