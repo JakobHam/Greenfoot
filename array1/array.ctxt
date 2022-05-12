@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=array
+comment0.text=\n\ Write\ a\ description\ of\ class\ array\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=arrsize
+comment2.target=void\ arraysize(int)
+comment3.params=
+comment3.target=void\ fillRandom()
+comment4.params=parameter
+comment4.target=void\ setAll(int)
+comment5.params=
+comment5.target=int\ mittelwert()
+comment6.params=
+comment6.target=int\ min()
+comment7.params=min\ max
+comment7.target=void\ clamp(int,\ int)
+comment8.params=
+comment8.target=void\ sort()
+numComments=9
