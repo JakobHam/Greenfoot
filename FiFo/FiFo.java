@@ -12,7 +12,7 @@ public class FiFo
     public FiFo()
     {
     }
-    
+
     public int numberOfElements()
     {
         return numberOfNodes;
@@ -22,6 +22,7 @@ public class FiFo
     {
         return numberOfElements()==0;
     }
+
     public void put(int newvalue)
     {
         Node node = new Node();
